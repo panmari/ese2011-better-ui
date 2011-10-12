@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CalendarUtil {
 
-	private java.util.Calendar cal = java.util.Calendar.getInstance();
+	private static java.util.Calendar cal = java.util.Calendar.getInstance();
 	private static CalendarUtil util;
 	
 	private CalendarUtil(){
@@ -139,7 +139,7 @@ public class CalendarUtil {
 	public boolean isToday(int dayOfMonth, int month, int year){
 		java.util.Calendar temp = java.util.Calendar.getInstance();
 		int currentDay = temp.get(temp.DAY_OF_MONTH);
-		int currentMonth = temp.get(temp.MONTH);
+		int currentMonth = temp.get(temp.MONTH) +1;
 		int currentYear = temp.get(temp.YEAR);
 		return (currentDay == dayOfMonth) && (currentMonth == month) && (currentYear == year);
 	}
