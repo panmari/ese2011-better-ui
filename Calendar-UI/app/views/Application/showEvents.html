@@ -36,7 +36,7 @@
                 <ol>
                          #{list items:thisMonthDates, as:'date'}
 								<div #{if calendar.hasVisibleEventOn(myself, date, cu.getMonth(), cu.getYear())} id="hasEvent" #{/if}>
-								<li #{if cu.isToday(date)} id="today" #{/if}> ${date} </li> </div>
+								<li  #{if cu.isToday(date, cu.getMonth(), cu.getYear())} id="today" #{/if}> ${date} </li> </div>
 						 #{/list}
                 </ol>
         </li>
