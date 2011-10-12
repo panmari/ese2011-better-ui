@@ -136,7 +136,16 @@ public class CalendarUtil {
 		cal.set(year, month-1, date);
 	}
 	
+	public boolean isToday(int dayOfMonth){
+		cal.setTime(new Date());
+		int currentDay = cal.get(cal.DAY_OF_MONTH);
+		cal.set(cal.DAY_OF_MONTH, 1);		//default setting
+		return currentDay == dayOfMonth;
+	}
+	
 	private int startMonday(int startSunday){
 		return ((startSunday+5)%7)+1;
 	}
+	
+
 }	
