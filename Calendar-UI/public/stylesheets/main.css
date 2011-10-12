@@ -123,6 +123,8 @@ li li.holiday    {  }
  -------------------------*/
 li#lastmonth li,
 li#nextmonth li    { background: #5E90AE;}
+li#today li    		{ background: #FAD987;}
+
 
 #hasEvent {
 	font-weight: bold;
