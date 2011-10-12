@@ -36,7 +36,7 @@
                 <ol>
                          #{list items:thisMonthDates, as:'date'}
 								<div #{if calendar.hasVisibleEventOn(myself, date, cu.getMonth(), cu.getYear())} id="hasEvent" #{/if}>
-								<li  #{if cu.isToday(date, cu.getMonth(), cu.getYear())} id="today" #{/if}> ${date} </li> </div>
+								<li#{if cu.isToday(date, cu.getMonth(), cu.getYear())} class="today"#{/if}> ${date} </li> </div>
 						 #{/list}
                 </ol>
         </li>
@@ -57,6 +57,7 @@
 #{list items:events, as:'event'}
 	<p>
 		${event.name} from ${event.startTime.toString()} to ${event.endTime.toString()} 
+		#{if event.isPrivate()} (private) #{/if} #{else} (public) #{/else}
 		#{if user==myself}
 		<a href=@{Application.showEditEvent(user.name, calendar.name, event.name)}>Edit</a> 
 		<a href=@{Application.removeEvent(user.name, calendar.name, event.name)}>Delete</a> 
